@@ -27,11 +27,11 @@ export class AuthService {
   
 
   signUp(data:User): Observable<any> {
-    return this._httpClient.post("https://routeegypt.herokuapp.com/signup",data)
+    return this._httpClient.post("https://route-movies-api.vercel.app/signup",data)
   }
 
   signIn(data:User): Observable<any> {
-    return this._httpClient.post("https://routeegypt.herokuapp.com/signin",data)
+    return this._httpClient.post("https://route-movies-api.vercel.app/signin",data)
   }
 
 
