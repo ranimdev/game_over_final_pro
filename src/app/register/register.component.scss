@@ -1,0 +1,27 @@
+.register{
+    height: 100vh;
+    background-color: #272b30;
+    padding-top:5rem ;
+
+    .account{
+        box-shadow: 0 1rem 3rem #0000002d!important;
+    }
+    
+
+    form{
+        
+        input{
+            background-color: #1c1e22;
+            border: 0 solid rgba(0,0,0,.6);
+            border-radius: 5px;
+            margin-bottom: 0.3rem;
+        }
+        button{
+            background-color: #3a3f44;
+            border-color: #22241d;
+            &:hover{
+                background-color: #0d6efd;
+            }
+        }
+    }
+}

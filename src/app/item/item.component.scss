@@ -1,0 +1,29 @@
+
+.card{
+    background-color: #32383e;
+    border: 0 solid rgba(0,0,0,.6);
+    border-radius: 0.25rem;
+    box-shadow: 0 .5rem 1rem #00000026!important;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    color: #aaa; 
+
+    &:hover{
+        transform: scale(1.03);
+    }
+    
+    span{
+        background-color: #4799eb;
+        color: white;
+    }
+
+    .genre{
+        background-color: #7a8288;
+        color: #272b30!important;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        transform: translateY(-12%);
+       
+    }
+    
+}

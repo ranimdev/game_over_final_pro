@@ -1,0 +1,13 @@
+<section class="py-5 item mt-5">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-3" *ngFor="let sort_by of sort_by|slice:0:count*20">
+                <app-item [game]="sort_by"></app-item>
+            </div>
+        </div>
+        <div class="text-center" *ngIf="count*1<sort_by.length" (click)="count=count+1">
+            <app-more-games></app-more-games>
+        </div>
+    </div>
+    <app-loading *ngIf="sort_by.length == 0"></app-loading>
+</section>

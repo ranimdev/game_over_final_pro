@@ -1,0 +1,77 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" >
+        <img class="" src="../../assets/logo.png" alt="">
+        Game Over
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+        <ul  class="d-flex navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- *ngIf="isLogin" -->
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]=" 'home' " [routerLinkActive]=" 'active' ">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]=" 'all' " [routerLinkActive]=" 'active' ">All</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" [routerLinkActive]=" 'active' " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Platforms
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="['platforms', 'pc']" >pc</a></li>
+              <li><a class="dropdown-item" [routerLink]="['platforms', 'browser']" >browser</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  [routerLinkActive]=" 'active' " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              sort-by
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="[ 'sort-by' , 'release-date']">release-date</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'sort-by' , 'popularity']">popularity</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'sort-by' , 'alphabetical']">alphabetical</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'sort-by' , 'relevance']">relevance</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fw-semibold"  [routerLinkActive]=" 'active' " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'racing']">racing</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'sports']">sports</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'social']">social</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'shooter']">shooter</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'open-world']">open-world</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'zombie']">zombie</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'fantasy']">fantasy</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'action-rpg']">action-rpg</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'action']">action</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'flight']">flight</a></li>
+              <li><a class="dropdown-item" [routerLink]="[ 'categories' , 'battle-royale']">battle-royale</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+
+        <ul class="navbar-nav d-flex align-items-center ms-auto mb-2 mb-lg-0">
+            <li class="mx-2" *ngIf="!isLogin">
+                <a [routerLink]=" 'login' " class="nav-link btn py-2">Login</a>
+            </li>
+
+            <li class="mx-2" *ngIf="!isLogin">
+                <a [routerLink]=" 'register' " class="nav-link btn py-2 join px-2">Join Free</a>
+            </li>
+
+            <li class="mx-2" *ngIf="isLogin" (click)="logOut()">
+              <p class="nav-link btn py-2 join">Log Out</p>
+          </li>
+        </ul>
+
+        
+      </div>
+    </div>
+  </nav>

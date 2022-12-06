@@ -1,0 +1,119 @@
+<div class="">
+<div class="details" [style.background-image]="details.thumbnail" >
+    <div class="container mt-4">
+        <div class="row ">
+            <div class="col-md-4">
+                <img [src]="details.thumbnail" class="w-100 rounded-2" alt="">
+                <div class="row justify-content-between mt-2">
+                    <div class="col-3 col-lg-2 ">
+                        <span class="btn btn-dark2 mb-3 py-2 cursor free">FREE</span>
+                    </div>
+                    <div class="col ms-1">
+                        <a  class="btn btn-ftg-blue btn-block w-100 py-2 me-0" href="{{details.freetogame_profile_url}}" target="_blank">
+                            <!-- [routerLink]="['/',details.freetogame_profile_url, details.id]" -->
+                            <span class="play_now" >PLAY NOW </span>
+                            <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 contact">
+                <h1>{{details.title}}</h1>
+                <h5 class="mt-3">About {{details.title}}</h5>
+                <p class="py-2">{{details.description }}</p>
+                <h5 class="mt-3">Minimum System Requirements</h5>
+
+                <ul class="list-unstyled ms-2">
+                    <li> <strong>graphics :{{min_sys.graphics}}</strong></li>
+                    <li> <strong>memory :{{min_sys.memory}} </strong> </li>
+                    <li> <strong>os :  {{min_sys.os}}</strong> </li>
+                    <li> <strong>processor : {{min_sys.processor}} </strong> </li>
+                    <li> <strong>storage :  {{min_sys.storage}}</strong> </li> 
+                </ul>
+
+                <h4 class="mt-3">{{details.title}} Screenshots</h4>
+
+                <div class="carousel mb-3">
+
+                    <owl-carousel-o [options]="customOptions">
+                  
+                      <ng-container *ngFor="let details of details.screenshots">
+                        <ng-template carouselSlide [id]="details.id" >
+                          <img [src]="details.image" [alt]="details.alt" [title]="details.title">
+                        </ng-template>
+                      </ng-container>
+                  
+                    </owl-carousel-o>
+                  
+                    <h2 class="mt-3">Additional Information</h2>
+                </div>
+
+                <hr class="mt-2 mb-3">
+
+                <div class="row mb-3">
+                    <div class="col-6 col-md-4 mb-2 flex-wrap">
+                        <span class="text-muted ">
+                            Title
+                        </span> 
+                        <p>  
+                            {{details.title}}
+                        </p>
+                    </div>
+
+                    <div class="col-6 col-md-4 flex-wrap">
+                        <span class="text-muted ">
+                            Developer
+                        </span> 
+                        <p>     
+                            {{details.developer}}
+                        </p>
+                    </div>
+
+                    <div class="col-6 col-md-4 flex-wrap">
+                        <span class="text-muted">
+                            Publisher
+                        </span> 
+                        <p>     
+                            {{details.publisher}}
+                        </p>                    
+                    </div>
+
+                    <div class="col-6 col-md-4 flex-wrap">
+                        <span class="text-muted">
+                            Release Date
+                        </span> 
+                        <p>     
+                            {{details.release_date}}
+                        </p>                    
+                    </div>
+
+                    <div class="col-6 col-md-4 flex-wrap">
+                        <span class="text-muted">
+                            Genre
+                        </span> 
+                        <p>     
+                            {{details.genre}}
+                        </p>                    
+                    </div> 
+
+                    <div class="col-6 col-md-4 flex-wrap">
+                        <span class="text-muted">
+                            Platform
+                        </span> 
+                        <div class="d-flex">
+                            <i class="fab fa-windows me-1 pt-1"></i>  
+                            <p>   
+                                {{details.platform}}
+                            </p>                    
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
